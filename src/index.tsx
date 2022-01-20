@@ -1,17 +1,48 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import Button from "@mui/material/Button";
+import { green } from "@mui/material/colors";
+import { createTheme } from "@mui/material/styles";
+import { fleetTheme } from "@carrier/fds-react/FleetTheme";
+import FleetThemeProvider from "@carrier/fds-react/FleetThemeProvider";
+import AppBar from "@carrier/fds-react/AppBar";
+import Toolbar from "@carrier/fds-react/Toolbar";
+import Typography from "@carrier/fds-react/Typography";
+
+// Stop passing this as the theme and the default Fleet theme will apply.
+const customTheme = createTheme({
+  ...fleetTheme,
+  palette: {
+    primary: {
+      main: green[500],
+    },
+  },
+});
+
+export default function ThemeNesting() {
+  return (
+    <FleetThemeProvider theme={customTheme}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography
+            sx={{
+              flexGrow: 1,
+            }}
+            variant="h6"
+          >
+            News
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
+    </FleetThemeProvider>
+  );
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeNesting />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
