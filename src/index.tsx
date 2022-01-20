@@ -26,7 +26,7 @@ export default function ThemeNesting() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6">News</Typography>
-          <Button color="primary">Login</Button>
+          <Button color="secondary">Login</Button>
         </Toolbar>
       </AppBar>
     </FleetThemeProvider>
