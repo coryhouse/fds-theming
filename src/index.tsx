@@ -10,7 +10,6 @@ import AppBar from "@carrier/fds-react/AppBar";
 import Toolbar from "@carrier/fds-react/Toolbar";
 import Typography from "@carrier/fds-react/Typography";
 
-// Stop passing this as the theme and the default Fleet theme will apply.
 const customTheme = createTheme({
   ...fleetTheme,
   palette: {
@@ -22,6 +21,7 @@ const customTheme = createTheme({
 
 export default function ThemeNesting() {
   return (
+    // Remove the theme prop below and the default Fleet theme will apply.
     <FleetThemeProvider theme={customTheme}>
       <AppBar position="static">
         <Toolbar>
