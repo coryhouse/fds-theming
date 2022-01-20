@@ -25,15 +25,8 @@ export default function ThemeNesting() {
     <FleetThemeProvider theme={customTheme}>
       <AppBar position="static">
         <Toolbar>
-          <Typography
-            sx={{
-              flexGrow: 1,
-            }}
-            variant="h6"
-          >
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
+          <Typography variant="h6">News</Typography>
+          <Button color="primary">Login</Button>
         </Toolbar>
       </AppBar>
     </FleetThemeProvider>
